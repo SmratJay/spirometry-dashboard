@@ -24,3 +24,4 @@ Thumbs.db
 
 # Keep source/data, exclude packaged desktop binaries
 first_repo/unstopsmarthire/
+first_repo/.git_backup_for_outer_repo/
