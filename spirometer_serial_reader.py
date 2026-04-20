@@ -17,7 +17,7 @@ import threading
 # CONFIGURATION - ADJUST THESE FOR YOUR HARDWARE
 # ============================================================================
 
-SERIAL_PORT = "COM3"  # Change if different
+SERIAL_PORT = "COM5"  # Change if different
 BAUD_RATE = 115200
 TEST_DURATION = 6  # seconds (for FEV1 measurement)
 SAMPLING_RATE = 10  # Hz (read faster than 500ms intervals for better data)

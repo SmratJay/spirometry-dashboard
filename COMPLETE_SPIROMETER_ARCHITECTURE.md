@@ -35,7 +35,7 @@
 │              LAYER 2: DATA ACQUISITION & CONVERSION                    │
 ├────────────────────────────────────────────────────────────────────────┤
 │                                                                        │
-│  1️⃣  CONNECT TO SERIAL PORT (COM3)                                    │
+│  1️⃣  CONNECT TO SERIAL PORT (COM5)                                    │
 │      └─ Import pyserial library                                       │
 │      └─ Opens communication with ESP32                                │
 │                                                                        │
@@ -183,7 +183,7 @@ python spirometer_serial_reader.py
 ```
 
 **What happens:**
-- Connects to COM3 (your ESP32)
+- Connects to COM5 (your ESP32)
 - Waits for patient to blow
 - Reads for 6 seconds
 - Saves: `spirometry_PATIENT_001_20260420_143022.csv`

@@ -27,7 +27,7 @@ Your complete spirometer system has **3 layers**:
 ```
 ┌─────────────────────────────────────┐
 │  spirometer_serial_reader.py        │
-│  ✓ Connects to COM3                │
+│  ✓ Connects to COM5                │
 │  ✓ Reads sensor data for 6 seconds │
 │  ✓ Converts distance → volume       │
 │  ✓ Saves raw data to CSV           │
@@ -96,10 +96,10 @@ pip install pyserial scipy
 ### Step 2: Check Arduino Connection
 1. Connect your ESP32 to computer with USB cable
 2. Open Device Manager (Windows) or `ls /dev/ttyUSB*` (Linux)
-3. Find your COM port (e.g., COM3)
+3. Find your COM port (e.g., COM5)
 4. Update line 23 in `spirometer_serial_reader.py` if different:
    ```python
-   SERIAL_PORT = "COM3"  # Change this if needed
+    SERIAL_PORT = "COM5"  # Change this if needed
    ```
 
 ### Step 3: Run a Test
@@ -108,7 +108,7 @@ python spirometer_serial_reader.py
 ```
 
 **What happens:**
-1. ✓ Connects to COM3
+1. ✓ Connects to COM5
 2. ▶ Prompts: "Blow into the tubes!"
 3. Reads data for 6 seconds, showing real-time volumes:
    ```
@@ -183,7 +183,7 @@ fev1_percentile = compare_to_reference(metrics['FEV1 (mL)'], age, height, gender
 | Problem | Solution |
 |---------|----------|
 | "No data received" | Check USB cable, verify COM port, Arduino must print "Sensor1 OK" etc |
-| "Failed to connect to COM3" | Change SERIAL_PORT variable or check Device Manager for correct port |
+| "Failed to connect to COM5" | Change SERIAL_PORT variable or check Device Manager for correct port |
 | Arrow volumes too low/high | Adjust `SENSOR_MAX_DISTANCE_MM` or `TUBE_MAX_VOLUMES` based on calibration |
 | Serial errors | Ensure Arduino code matches format: "S1:XXX  S2:XXX  S3:XXX" |
 | FEV1 = 0 | Test too short or no air flow—re-run with patient blowing harder |
@@ -236,7 +236,7 @@ result = run_test(subject_id="JOHN_DOE_001", output_dir=".")
                              ▼
                 ┌─────────────────────────────────┐
                 │ spirometer_serial_reader.py      │
-                │  - Connect to COM3              │
+                │  - Connect to COM5              │
                 │  - Read for 6 seconds           │
                 │  - Convert to volume (mL)       │
                 │  - Detect FEV1, FVC, PEF        │

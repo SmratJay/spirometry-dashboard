@@ -103,7 +103,7 @@ TEST_DURATION = 6  # Change to 10, 15, etc.
 ### Change Serial Port
 **File:** `spirometer_serial_reader.py`, line 23
 ```python
-SERIAL_PORT = "COM3"  # Change to your port
+SERIAL_PORT = "COM5"  # Change to your port
 ```
 
 ### Adjust Calibration
@@ -128,7 +128,7 @@ result = run_test(subject_id="JOHN_DOE_001")
 
 | Problem | Check |
 |---------|-------|
-| "Failed to connect to COM3" | Device Manager → Which COM port is ESP32 on? |
+| "Failed to connect to COM5" | Device Manager → Which COM port is ESP32 on? |
 | "No data received" | Arduino must print "S1:XXX  S2:XXX  S3:XXX" format |
 | "File not found error" | Ensure CSV file is in same directory as Python script |
 | Volumes too low/high | Adjust `TUBE_MAX_VOLUMES` and `SENSOR_MAX_DISTANCE_MM` |
@@ -197,7 +197,7 @@ CSV: Sensor1, 612.4, 489.2, 79.9, 245.6, 6.0
 
 ```python
 # Connection
-reader = SpirometryReader(port="COM3", baud=115200)
+reader = SpirometryReader(port="COM5", baud=115200)
 reader.connect()
 
 # Capture test
