@@ -1017,8 +1017,13 @@ class App(ctk.CTk):
         self._meta    = None
         self._results = {}
 
-        self.v_path   = ctk.StringVar(
-            value=r"D:\New folder (2)\NHANES_2007_2012_Only_Acceptable_Spirometry_Values.csv")
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        csv_candidates = [
+            os.path.join(base_dir, "NHANES_2007_2012_Only_Acceptable_Spirometry_Values.csv"),
+            os.path.join(base_dir, "final_training_dataset.csv"),
+        ]
+        default_csv = next((p for p in csv_candidates if os.path.exists(p)), "")
+        self.v_path   = ctk.StringVar(value=default_csv)
         self.v_target = ctk.StringVar(value="Obstruction")
         self.v_mode   = ctk.StringVar(value="Compare All")
 
